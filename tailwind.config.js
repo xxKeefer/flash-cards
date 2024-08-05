@@ -6,7 +6,7 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      sans: ["Shantell Sans Variable, Inter, system-ui, sans-serif"],
+      hand: ["Shantell Sans Variable, Inter, system-ui, sans-serif"],
       emoji: ["Noto Color Emoji, system-ui, sans-serif"],
     },
     extend: {},
