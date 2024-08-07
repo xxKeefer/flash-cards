@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useDarkMode } from "usehooks-ts";
+import { List } from "react-bootstrap-icons";
 
-export const Header = () => {
-  const { isDarkMode, toggle } = useDarkMode({ localStorageKey: "dark-mode" });
-
+type Props = {
+  openDrawer: (open: boolean) => void;
+};
+export const Header = ({ openDrawer }: Props) => {
   return (
     <header
       data-theme="dark"
@@ -18,10 +19,10 @@ export const Header = () => {
         <SwapDot color="accent" char="R" emoji="⚡" />
       </div>
       <button
-        onClick={toggle}
-        className="btn btn-circle btn-ghost font-emoji text-2xl"
+        onClick={() => openDrawer(true)}
+        className="btn btn-circle btn-ghost text-2xl"
       >
-        {isDarkMode ? "🌞" : "🌚"}
+        <List />
       </button>
     </header>
   );
