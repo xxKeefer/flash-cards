@@ -18,6 +18,7 @@ export const Drawer = ({ open, setOpen, children }: Props) => {
         type="checkbox"
         className="drawer-toggle"
         checked={open}
+        readOnly
       />
       <div className="drawer-content flex px-2">{children}</div>
       <div className="drawer-side">

@@ -31,3 +31,7 @@ export const SOUNDS = {
     "ep",
   ],
 };
+
+export const PATTERNS = {
+  THREE_LETTERS: `^(${SOUNDS.SINGLES.join("|")})(${SOUNDS.DOUBLES.join("|")})$`,
+};
