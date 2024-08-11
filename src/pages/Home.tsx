@@ -14,29 +14,36 @@ export const Home = () => {
   };
 
   return (
-    <div className="flex flex-1 items-center justify-center gap-2 bg-base-100">
-      {card < sounds.length ? (
-        <FlashCard
-          onClick={() => setCard((prev) => prev + 1)}
-          side={sounds[card].length > 1 ? "right" : "left"}
-        >
-          {sounds[card]}
-        </FlashCard>
-      ) : (
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center justify-center gap-2">
-            <span className="font-emoji text-6xl">✨</span>
-            <span className="font-emoji text-6xl">💯</span>
-            <span className="font-emoji text-6xl">🎉</span>
-          </div>
-          <button
-            onClick={restart}
-            className="btn btn-success btn-lg btn-block"
+    <div className="flex flex-1 flex-col">
+      <progress
+        className="progress progress-secondary my-2 w-full"
+        value={card}
+        max={sounds.length}
+      ></progress>
+      <div className="flex flex-1 items-center justify-center gap-2 bg-base-100">
+        {card < sounds.length ? (
+          <FlashCard
+            onClick={() => setCard((prev) => prev + 1)}
+            side={sounds[card].length > 1 ? "right" : "left"}
           >
-            Play Again
-          </button>
-        </div>
-      )}
+            {sounds[card]}
+          </FlashCard>
+        ) : (
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center justify-center gap-2">
+              <span className="font-emoji text-6xl">✨</span>
+              <span className="font-emoji text-6xl">💯</span>
+              <span className="font-emoji text-6xl">🎉</span>
+            </div>
+            <button
+              onClick={restart}
+              className="btn btn-success btn-lg btn-block"
+            >
+              Play Again
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
