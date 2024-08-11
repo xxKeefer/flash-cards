@@ -26,35 +26,41 @@ export const Drawer = ({ open, setOpen, children }: Props) => {
           <li>
             <button
               onClick={() => setOpen(false)}
-              className="btn btn-ghost text-3xl"
+              className="btn btn-ghost flex justify-between text-3xl"
             >
-              <span className="font-emoji text-2xl">❌</span> Close Menu
+              Close Menu <span className="font-emoji text-2xl">❌</span>
             </button>
           </li>
           <li>
-            <button onClick={toggle} className="btn btn-ghost text-3xl">
+            <button
+              onClick={toggle}
+              className="btn btn-ghost flex justify-between text-3xl"
+            >
               {isDarkMode ? (
-                <span>
-                  <span className="font-emoji text-2xl">🌞</span> Light Mode
-                </span>
+                <>
+                  Light Mode <span className="font-emoji text-2xl">🌞</span>{" "}
+                </>
               ) : (
-                <span>
-                  <span className="font-emoji text-2xl">🌚</span> DarkMode
-                </span>
+                <>
+                  Dark Mode <span className="font-emoji text-2xl">🌚</span>
+                </>
               )}
             </button>
           </li>
           <li>
-            <a onClick={() => navigate("/")} className="btn btn-ghost text-3xl">
-              <span className="font-emoji text-2xl"> 1️⃣</span> One Card
+            <a
+              onClick={() => navigate("/")}
+              className="btn btn-ghost flex justify-between text-3xl"
+            >
+              One Card <span className="font-emoji text-2xl"> 1️⃣</span>
             </a>
           </li>
           <li>
             <a
               onClick={() => navigate("/two-cards")}
-              className="btn btn-ghost text-3xl"
+              className="btn btn-ghost flex justify-between text-3xl"
             >
-              <span className="font-emoji text-2xl"> 2️⃣</span> Two Cards
+              Two Cards <span className="font-emoji text-2xl"> 2️⃣</span>
             </a>
           </li>
         </ul>
